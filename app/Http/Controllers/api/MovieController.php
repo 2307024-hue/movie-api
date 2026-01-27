@@ -12,20 +12,23 @@ class MovieController extends Controller
     public function index() { return Movie::where('user_id', Auth::id())->get(); }
 
     public function store(Request $request) {
-        return Movie::create([
-            'user_id' => Auth::id(),
-            'tmdb_id' => $request->tmdb_id,
+    return Movie::updateOrCreate(
+        ['user_id' => Auth::id(), 'tmdb_id' => $request->tmdb_id],
+        [
             'title' => $request->title,
             'poster_path' => $request->poster_path,
-            'personal_notes' => 'Belum ada catatan'
-        ]);
-    }
+            'notes' => 'Belum ada catatan' // Pastikan pakai 'notes', bukan 'personal_notes'
+        ]
+    );
+}
 
     public function update(Request $request, $id) {
-        $movie = Movie::where('user_id', Auth::id())->findOrFail($id);
-        $movie->update(['personal_notes' => $request->notes]);
-        return response()->json(['message' => 'Catatan diupdate']);
-    }
+    $movie = Movie::where('user_id', Auth::id())->findOrFail($id);
+    // Pastikan pakai 'notes' agar masuk ke HeidiSQL
+    $movie->update(['notes' => $request->notes]); 
+    
+    return response()->json(['message' => 'Catatan diupdate', 'data' => $movie]);
+}
 
     public function destroy($id) {
         Movie::where('user_id', Auth::id())->findOrFail($id)->delete();
