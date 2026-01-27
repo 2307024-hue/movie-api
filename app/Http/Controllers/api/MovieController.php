@@ -21,7 +21,6 @@ class MovieController extends Controller
         ]);
     }
 
-    // INI FITUR UPDATE YANG KAMU MAKSUD
     public function update(Request $request, $id) {
         $movie = Movie::where('user_id', Auth::id())->findOrFail($id);
         $movie->update(['personal_notes' => $request->notes]);
