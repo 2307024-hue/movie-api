@@ -92,32 +92,30 @@ Pastikan PHP (>= 8.2) dan MySQL (XAMPP/Laragon) sudah aktif.
 
 ---
 
-
 ### 🖥️ Dokumentasi Backend & API (Laravel)
 
-Bagian ini menjelaskan peran Laravel sebagai API server yang mengelola autentikasi user dan penyimpanan data koleksi film ke database MySQL.
+Bagian ini menjelaskan peran Laravel sebagai API server yang mengelola database MySQL.
 
 #### 1. Arsitektur Database (MySQL)
-* **Skema Tabel**: Menampilkan struktur tabel `users` untuk autentikasi dan tabel `movies` untuk menyimpan koleksi film serta catatan user.
-* **Relasi Data**: Memastikan setiap data film yang disimpan terhubung dengan `user_id` yang tepat di database.
+* **Skema Tabel**: Menampilkan struktur tabel `users` dan `movies` untuk menyimpan koleksi film.
 ![Struktur Database](../movie-ui/public/img/gambar9.png)
 
 #### 2. Endpoint API Autentikasi
-* **Fitur Register**: Endpoint yang memproses pendaftaran akun baru dan menyimpannya ke tabel `users`.
-![Struktur Database](../movie-ui/public/img/gambar7.png)
-* **Fitur Login**: Proses validasi kredensial user untuk memberikan akses ke fitur-fitur yang diproteksi.
+* **Fitur Register**: Endpoint yang memproses pendaftaran akun baru ke tabel `users`.
+![Form Register](../movie-ui/public/img/gambar7.png)
+* **Fitur Login**: Validasi kredensial user untuk memberikan akses fitur.
 ![Form Login](../movie-ui/public/img/gambar11.png)
 
 #### 3. Manajemen Data Koleksi (CRUD)
-* **Create & Store**: API menerima data film dari Frontend dan menyimpannya ke database lokal.
+* **Create & Store**: API menerima data film dan menyimpannya ke database lokal.
 ![Notifikasi Simpan](../movie-ui/public/img/gambar9.png)
-* **Update Note**: Proses pembaruan kolom catatan/pesan pada tabel `movies` berdasarkan ID film.
+* **Update Note**: Proses pembaruan catatan pada tabel `movies`.
 ![Update Data](../movie-ui/public/img/gambar11.png)
-* **Delete Record**: Menghapus baris data film dari database secara permanen saat user memilih hapus.
+* **Delete Record**: Menghapus data film dari database secara permanen.
 ![Hapus Data](../movie-ui/public/img/gambar13.png)
 
 #### 4. Bukti Integrasi Database
-* **Data Integrity**: Screenshot **phpMyAdmin** menunjukkan data yang diinput dari React berhasil masuk dan terbaca dengan sempurna di sistem database lokal.
+* **Data Integrity**: Screenshot phpMyAdmin menunjukkan data dari React berhasil masuk ke MySQL.
 ![Database Proof](../movie-ui/public/img/gambar20.png)
 
 ---
