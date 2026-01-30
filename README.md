@@ -1,66 +1,135 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🎬 YaraFilm - Portal Katalog Film (Fullstack Project)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+YaraFilm adalah aplikasi web katalog film modern yang mengintegrasikan data dari **TVMaze API** secara real-time. Project ini dideploy secara hybrid untuk menunjukkan kemampuan integrasi sistem antara cloud (Frontend) dan local environment (Backend).
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 👤 Identitas Mahasiswa
+- **Nama:** [Rafi Miftahul Fauzi]
+- **NIM:** [2307024]
+- **Topik:** Portal Manajemen Film (YaraFilm)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🎯 Tujuan Project
+1.  **Integrasi API**: Menampilkan data film secara dinamis menggunakan Axios.
+2.  **Manajemen State**: Mengelola data favorit dan catatan user menggunakan React Hooks.
+3.  **Deployment Cloud**: Mengimplementasikan CI/CD menggunakan GitHub dan Vercel.
+4.  **UI/UX Responsif**: Menyesuaikan tampilan agar nyaman diakses via Smartphone maupun Desktop.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🚀 Fitur Utama
+Aplikasi ini sudah memenuhi seluruh kriteria instruksi pengerjaan:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. **Autentikasi Multi-User (Sanctum):**
+   - Register & Login dengan enkripsi password (Hashing).
+   - **Data Isolation:** Koleksi film User A tidak akan terlihat atau bisa dimodifikasi oleh User B.
+   - Proteksi fitur Simpan & Update (Hanya user login yang bisa mengelola koleksi).
 
-## Laravel Sponsors
+2. **Integrasi Public API (TVMaze API):**
+   - Mengambil data film secara *real-time* menggunakan Axios.
+   - Tampilan antarmuka Grid View yang responsif dan modern.
+   - **Modal Detail:** Informasi lengkap film termasuk sinopsis, genre, dan rating.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+3. **Fitur Pencarian & Filter:**
+   - Pencarian film berdasarkan judul secara dinamis.
+   - Filter **Trending** untuk menampilkan film dengan rating tinggi (>= 8.0).
 
-### Premium Partners
+4. **Operasi CRUD (Database Lokal):**
+   - **Create:** Menyimpan film pilihan dari API ke database lokal (Koleksi Saya).
+   - **Read:** Menampilkan daftar koleksi pribadi milik user yang sedang login.
+   - **Update:** Fitur menambah atau mengubah catatan/kesan pribadi pada setiap film.
+   - **Delete:** Menghapus film dari daftar koleksi pribadi.
+    
+    - **Real-time Catalog**: Menampilkan ribuan data film secara dinamis dari API TVMaze.
+    - **Advanced Filtering**: Pencarian film berdasarkan judul dan filter spesifik per genre (Action, Horror, dll).
+    - **Personal Collection**: Pengguna dapat menyimpan film favorit ke database lokal (MySQL).
+    - **Note System**: Fitur untuk menambahkan catatan atau ulasan pribadi pada setiap film yang disimpan.
+    - **Fully Responsive**: Tampilan dioptimalkan untuk desktop maupun perangkat mobile (HP).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+---
+   ## Langkah-langkah ini wajib dilakukan agar Database MySQL siap berkomunikasi dengan Frontend. atau pun sebalik nya
 
-## Contributing
+## 🛠️ Tech Stack
+| Bagian | Teknologi |
+|---|---|
+| **Frontend** | React.js, Vite, Axios |
+| **Backend** | Laravel 10 (REST API) | Laravel Sanctum (Auth) |
+| **Database** | MySQL | HeidiSQL |
+| **Hosting** | Vercel (Frontend) |
+| **Styling** | CSS3 & Media Queries |
+|  **Alat** | Git sebagai Version Control |
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 📋 Langkah-Langkah Instalasi & Menjalankan Project
 
-## Code of Conduct
+### 1. Persiapan Backend (Laravel)
+Pastikan PHP (>= 8.2) dan MySQL (XAMPP/Laragon) sudah aktif.
+1. Masuk ke folder backend: `cd movie-api`
+2. Install dependencies: `composer install`
+3. Copy env: `cp .env.example .env`
+4. Buat database di phpMyAdmin/HeidiSQL dengan nama `db_koleksi_film`.
+5. Jalankan migrasi: `php artisan migrate`
+6. Nyalakan server: `php artisan serve` (Link: `http://localhost:8000`)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 2. Persiapan Frontend (React)
+1. Masuk ke folder frontend: `cd movie-ui`
+2. Install dependencies: `npm install`
+3. Jalankan secara lokal: `npm run dev`
+4. Buka di browser: `http://localhost:5173`
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 📌 Endpoint API Utama (Local)
 
-## License
+- `POST /register` - Mendaftarkan akun baru.
+- `POST /login` - Autentikasi pengguna.
+- `GET /api/movies` - Mengambil daftar koleksi dari MySQL.
+- `POST /api/movies` - Menyimpan film baru ke database.
+- `PUT /api/movies/{id}` - Update catatan/notes film.
+- `DELETE /api/movies/{id}` - Menghapus film dari koleksi.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+
+### 🖥️ Dokumentasi Backend & API (Laravel)
+
+Bagian ini menjelaskan peran Laravel sebagai API server yang mengelola autentikasi user dan penyimpanan data koleksi film ke database MySQL.
+
+#### 1. Arsitektur Database (MySQL)
+* **Skema Tabel**: Menampilkan struktur tabel `users` untuk autentikasi dan tabel `movies` untuk menyimpan koleksi film serta catatan user.
+* **Relasi Data**: Memastikan setiap data film yang disimpan terhubung dengan `user_id` yang tepat di database.
+![Struktur Database](../movie-ui/public/img/gambar9.png)
+
+#### 2. Endpoint API Autentikasi
+* **Fitur Register**: Endpoint yang memproses pendaftaran akun baru dan menyimpannya ke tabel `users`.
+![Struktur Database](../movie-ui/public/img/gambar7.png)
+* **Fitur Login**: Proses validasi kredensial user untuk memberikan akses ke fitur-fitur yang diproteksi.
+![Form Login](../movie-ui/public/img/gambar11.png)
+
+#### 3. Manajemen Data Koleksi (CRUD)
+* **Create & Store**: API menerima data film dari Frontend dan menyimpannya ke database lokal.
+![Notifikasi Simpan](../movie-ui/public/img/gambar9.png)
+* **Update Note**: Proses pembaruan kolom catatan/pesan pada tabel `movies` berdasarkan ID film.
+![Update Data](../movie-ui/public/img/gambar11.png)
+* **Delete Record**: Menghapus baris data film dari database secara permanen saat user memilih hapus.
+![Hapus Data](../movie-ui/public/img/gambar13.png)
+
+#### 4. Bukti Integrasi Database
+* **Data Integrity**: Screenshot **phpMyAdmin** menunjukkan data yang diinput dari React berhasil masuk dan terbaca dengan sempurna di sistem database lokal.
+![Database Proof](../movie-ui/public/img/gambar20.png)
+
+---
+
+### 1. Backend & Database (Local Server)
+Sisi Backend (Laravel) dan Database (MySQL) dijalankan pada server lokal (Localhost) dengan alasan:
+* **Data Privacy:** Menjaga integritas data user dan koleksi pribadi di lingkungan lokal.
+* **Efficiency:** Memudahkan proses pengujian fitur CRUD (Create, Read, Update, Delete) secara intensif tanpa terkendala limitasi hosting gratisan.
+
+---
+
+## ⚠️ Catatan Penting 
+Karena project ini menggunakan metode **Hybrid Deployment**:
+* **Fitur Publik**: Browsing film, Searching, dan Filter Genre bisa dicoba langsung di link Vercel.
+* **Fitur CRUD (Login/Simpan)**: Memerlukan koneksi ke **Backend Lokal**. Penguji harus menjalankan project Laravel di localhost agar fitur Simpan Film dan Catatan berfungsi.
