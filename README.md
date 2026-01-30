@@ -98,25 +98,25 @@ Bagian ini menjelaskan peran Laravel sebagai API server yang mengelola database 
 
 #### 1. Arsitektur Database (MySQL)
 * **Skema Tabel**: Menampilkan struktur tabel `users` dan `movies` untuk menyimpan koleksi film.
-![Struktur Database](../movie-ui/public/img/gambar9.png)
+![Struktur Database](https://github.com/2307024-hue/movie-ui/blob/main/public/img/gambar9.png?raw=true)
 
 #### 2. Endpoint API Autentikasi
 * **Fitur Register**: Endpoint yang memproses pendaftaran akun baru ke tabel `users`.
-![Form Register](../movie-ui/public/img/gambar7.png)
+![Form Register](https://github.com/2307024-hue/movie-ui/blob/main/public/img/gambar7.png?raw=true)
 * **Fitur Login**: Validasi kredensial user untuk memberikan akses fitur.
-![Form Login](../movie-ui/public/img/gambar11.png)
+![Form Login](https://github.com/2307024-hue/movie-ui/blob/main/public/img/gambar11.png?raw=true)
 
 #### 3. Manajemen Data Koleksi (CRUD)
 * **Create & Store**: API menerima data film dan menyimpannya ke database lokal.
-![Notifikasi Simpan](../movie-ui/public/img/gambar9.png)
+![Notifikasi Simpan](https://github.com/2307024-hue/movie-ui/blob/main/public/img/gambar9.png?raw=true)
 * **Update Note**: Proses pembaruan catatan pada tabel `movies`.
-![Update Data](../movie-ui/public/img/gambar11.png)
+![Update Data](https://github.com/2307024-hue/movie-ui/blob/main/public/img/gambar11.png?raw=true)
 * **Delete Record**: Menghapus data film dari database secara permanen.
-![Hapus Data](../movie-ui/public/img/gambar13.png)
+![Hapus Data](https://github.com/2307024-hue/movie-ui/blob/main/public/img/gambar13.png?raw=true)
 
 #### 4. Bukti Integrasi Database
 * **Data Integrity**: Screenshot phpMyAdmin menunjukkan data dari React berhasil masuk ke MySQL.
-![Database Proof](../movie-ui/public/img/gambar20.png)
+![Database Proof](https://github.com/2307024-hue/movie-ui/blob/main/public/img/gambar20.png?raw=true)
 
 ---
 
